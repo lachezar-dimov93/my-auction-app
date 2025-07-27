@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image, { ImageProps } from "next/image";
 import { LABELS } from "@/constants/labels";
 
-// The props are simplified; className will now style the container.
 interface Props extends Omit<ImageProps, "src" | "alt"> {
   src: string;
   alt: string;
@@ -14,7 +13,7 @@ interface Props extends Omit<ImageProps, "src" | "alt"> {
 export default function ImageWithFallback({
   src,
   alt,
-  className, // This will be applied to the wrapper
+  className,
   sizes,
   ...rest
 }: Props) {
@@ -22,7 +21,6 @@ export default function ImageWithFallback({
   const [error, setError] = useState(false);
 
   return (
-    // The passed className controls the layout (size, shape, margins)
     <div className={`relative bg-gray-200 overflow-hidden ${className}`}>
       {!error ? (
         <>
@@ -33,7 +31,6 @@ export default function ImageWithFallback({
             className={`object-cover transition-opacity duration-500 ${
               loading ? "opacity-0" : "opacity-100"
             }`}
-            // Note: 'onLoadingComplete' is deprecated, use 'onLoad' instead
             onLoad={() => setLoading(false)}
             onError={() => {
               setError(true);

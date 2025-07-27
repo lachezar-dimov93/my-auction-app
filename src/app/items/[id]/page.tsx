@@ -1,9 +1,7 @@
 import { notFound } from "next/navigation";
 import ItemDetailView from "@/components/ItemDetailView";
 import { AuctionItem } from "@/types/item";
-
-const ITEMS_URL =
-  "https://sttrafficplatformassets.blob.core.windows.net/traffic-assets/lots.json";
+import { ITEMS_URL } from "@/constants/urls";
 
 export default async function ItemDetailPage({
   params,

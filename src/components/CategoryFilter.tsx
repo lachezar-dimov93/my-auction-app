@@ -1,13 +1,11 @@
-// src/components/CategoryFilter.tsx
 import { LABELS } from "@/constants/labels";
-import { FC, ChangeEvent } from "react";
+import { FC, useId } from "react";
+import { Combobox } from "./ui/combobox";
+import { Label } from "@/components/ui/label";
 
 interface CategoryFilterProps {
-  /** List of all available categories */
   categories: string[];
-  /** Currently selected category (empty string = all) */
   selectedCategory: string;
-  /** Called when the user picks a new category */
   onCategoryChange: (category: string) => void;
 }
 
@@ -16,29 +14,29 @@ const CategoryFilter: FC<CategoryFilterProps> = ({
   selectedCategory,
   onCategoryChange,
 }) => {
+  const comboboxOptions = [
+    { value: "", label: LABELS.ALL_CATEGORIES },
+    ...categories.map((cat) => ({ value: cat, label: cat })),
+  ];
+
+  const comboboxId = useId();
+
   return (
-    <div className="mb-4">
-      <label
-        htmlFor="category"
-        className="block text-sm font-medium text-gray-700"
+    <div>
+      <Label
+        htmlFor={comboboxId}
+        className="block text-sm font-medium text-gray-700 mb-1"
       >
         {LABELS.CATEGORY}
-      </label>
-      <select
-        id="category"
+      </Label>
+      <Combobox
+        id={comboboxId}
+        options={comboboxOptions}
         value={selectedCategory}
-        onChange={(e: ChangeEvent<HTMLSelectElement>) =>
-          onCategoryChange(e.target.value)
-        }
-        className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
-      >
-        <option value="">{LABELS.ALL_CATEGORIES}</option>
-        {categories.map((cat) => (
-          <option key={cat} value={cat}>
-            {cat}
-          </option>
-        ))}
-      </select>
+        onValueChange={onCategoryChange}
+        placeholder={LABELS.SELECT_CATEGORY}
+        searchPlaceholder={LABELS.SEARCH_CATEGORY}
+      />
     </div>
   );
 };

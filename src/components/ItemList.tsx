@@ -1,4 +1,3 @@
-// src/components/ItemList.tsx
 import { AuctionItem } from "@/types/item";
 import ItemCard from "./ItemCard";
 

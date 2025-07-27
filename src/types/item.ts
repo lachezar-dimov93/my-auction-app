@@ -1,3 +1,5 @@
+export type ItemStatus = "upcoming" | "live" | "ended";
+
 export interface AuctionItem {
   id: number;
   title: string;
@@ -7,5 +9,5 @@ export interface AuctionItem {
   imageUrl: string;
   auctionHouse: string;
   endDate: string;  // ISO string
-  status: "upcoming" | "live" | "ended";
+  status: ItemStatus;
 }
