@@ -25,7 +25,6 @@ This application is packed with features designed to provide a seamless and intu
 
 - **Optimized User Experience:**
 
-  - **Skeleton Loaders:** The application uses `loading.tsx` and skeleton components to prevent layout shifts (CLS) and improve perceived performance.
   - **Tailwind Animations:** Subtle animations on cards (hover states, transitions) and a custom “breathe” animation for live-status badges, all implemented with Tailwind CSS.
 
 - **Dynamic Badges:** Item cards feature dynamic badges for status (e.g., "live", "ended") and category, with colors assigned programmatically for visual consistency.
