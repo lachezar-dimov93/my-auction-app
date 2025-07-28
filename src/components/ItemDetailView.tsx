@@ -20,16 +20,19 @@ export default function ItemDetailView({ item }: Props) {
   }, [item.endDate]);
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="mx-auto mt-4 p-4 md:p-6 bg-white rounded-lg shadow-md">
       <ImageWithFallback
         src={item.imageUrl}
         alt={item.title}
-        className="w-full h-96 rounded-lg mb-6"
-        priority={true}
+        className="w-full h-56 md:h-96 rounded-lg mb-6"
+        priority
+        sizes="(max-width: 768px) 100vw, 768px"
       />
       <header className="mb-4">
         <div className="flex justify-between items-start mb-2">
-          <h1 className="text-3xl font-bold text-gray-900">{item.title}</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {item.title}
+          </h1>
           {status && (
             <Badge
               variant={STATUS_VARIANT_MAP[status]}
@@ -39,11 +42,11 @@ export default function ItemDetailView({ item }: Props) {
             </Badge>
           )}
         </div>
-        <p className="text-lg text-gray-600">{item.description}</p>
+        <p className="text-base md:text-lg text-gray-600">{item.description}</p>
       </header>
 
       <hr className="my-6" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-gray-700">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-gray-700">
         <div className="font-semibold text-gray-500">{LABELS.CATEGORY}</div>
         <div>
           <Badge

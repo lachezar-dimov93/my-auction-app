@@ -27,16 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-100 min-h-screen flex flex-col">
-        <header className="bg-white shadow p-4">
-          <div className="max-w-4xl mx-auto">
+        <header className="bg-white shadow w-full">
+          <div className="w-full max-w-5xl mx-auto px-4 py-4 flex items-center">
             <Link href="/items" className="text-xl font-bold">
               Auction Browser
             </Link>
           </div>
         </header>
 
-        {/* This is where each page’s content gets injected */}
-        <main className="flex-grow max-w-5xl mx-auto p-4">
+        <main className="w-full max-w-5xl mx-auto px-4 py-4 flex-grow overflow-x-hidden">
           {children}
         </main>
 

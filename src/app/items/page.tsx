@@ -195,7 +195,7 @@ export default function ItemsPage() {
   if (error) return <p className="text-center py-10 text-red-600">{error}</p>;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto pt-4 pb-4">
       {/* Filters */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <div className="lg:col-span-2">
