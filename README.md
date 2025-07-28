@@ -35,31 +35,31 @@ This application is packed with features designed to provide a seamless and intu
 ## 📸 Screenshots
 
 **Item List (Grid View) - Desktop**<br>
-![Item List Grid Desktop](/screenshots/item_list_grid_view_desktop.png)
+![Item List Grid Desktop](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_list_grid_view_desktop.png)
 
 **Item List (Grid View) - Tablet**<br>
-![Item List Grid Tablet](/screenshots/item_list_grid_view_tablet.png)
+![Item List Grid Tablet](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_list_grid_view_tablet.png)
 
-**Item List (Grid Viee) - Mobile**<br>
-![Item List Grid Mobile](/screenshots/item_list_grid_mobile.png)
+**Item List (Grid View) - Mobile**<br>
+![Item List Grid Mobile](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_list_grid_mobile.png)
 
 **Item List (List View) - Desktop**<br>
-![Item List List Desktop](/screenshots/item_list_list_desktop.png)
+![Item List List Desktop](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_list_list_desktop.png)
 
 **Item List (List View) - Tablet**<br>
-![Item List List Tablet](/screenshots/item_list_list_tablet.png)
+![Item List List Tablet](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_list_list_tablet.png)
 
 **Item List (List View) - Mobile**<br>
-![Item List List Mobile](/screenshots/item_list_list_mobile.png)
+![Item List List Mobile](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_list_list_mobile.png)
 
 **Item Detail - Desktop**<br>
-![Item Detail Desktop](/screenshots/item_details_desktop.png)
+![Item Detail Desktop](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_details_desktop.png)
 
 **Item Detail - Tablet**<br>
-![Item Detail Tablet](/screenshots/item_details_tablet.png)
+![Item Detail Tablet](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_details_tablet.png)
 
 **Item Detail - Mobile**<br>
-![Item Detail Mobile](/screenshots/item_details_mobile.png)
+![Item Detail Mobile](https://github.com/lachezar-dimov93/my-auction-app/blob/main/docs/assets/item_details_mobile.png)
 
 ---
 
