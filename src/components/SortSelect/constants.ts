@@ -5,8 +5,8 @@ export const SORT_OPTIONS: ComboboxOption[] = [
   { value: "priceDesc", label: "Price: High to Low" },
   { value: "titleAsc", label: "Title: A → Z" },
   { value: "titleDesc", label: "Title: Z → A" },
-  { value: "endDateAsc", label: "Ends Soon" },
-  { value: "endDateDesc", label: "Ends Later" },
+  { value: "endDateAsc", label: "Ending Soon" },
+  { value: "endDateDesc", label: "Ending Later" },
 ];
 
 export const SORT_PLACEHOLDER = "Sort by...";

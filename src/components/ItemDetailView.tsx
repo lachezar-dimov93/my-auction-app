@@ -1,16 +1,24 @@
-import { AuctionItem } from "@/types/item";
+import { AuctionItem, ItemStatus } from "@/types/item";
 import ImageWithFallback from "./ImageWithFallback";
 import { LABELS } from "@/constants/labels";
 import { formatCurrency, getCategoryColor } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { STATUS_VARIANT_MAP } from "./Badges/constants";
+import { useMemo } from "react";
 
 interface Props {
   item: AuctionItem;
 }
 
 export default function ItemDetailView({ item }: Props) {
+  // recompute status on every render
+  const status = useMemo<ItemStatus>(() => {
+    const now = Date.now();
+    const endTs = new Date(item.endDate).getTime();
+    return endTs > now ? "live" : "ended";
+  }, [item.endDate]);
+
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <ImageWithFallback
@@ -22,12 +30,12 @@ export default function ItemDetailView({ item }: Props) {
       <header className="mb-4">
         <div className="flex justify-between items-start mb-2">
           <h1 className="text-3xl font-bold text-gray-900">{item.title}</h1>
-          {item.status && (
+          {status && (
             <Badge
-              variant={STATUS_VARIANT_MAP[item.status]}
+              variant={STATUS_VARIANT_MAP[status]}
               className="text-sm flex-shrink-0"
             >
-              {item.status}
+              {status}
             </Badge>
           )}
         </div>
