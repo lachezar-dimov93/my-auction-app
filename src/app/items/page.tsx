@@ -126,6 +126,7 @@ export default function ItemsPage() {
       return passesSearch && passesCategory && passesMinPrice && passesMaxPrice;
     });
   }, [items, debouncedSearch, category, priceRange]);
+  const now = Date.now();
 
   const sortedItems = useMemo(() => {
     const arr = [...filteredItems];
@@ -138,16 +139,40 @@ export default function ItemsPage() {
         return arr.sort((a, b) => a.title.localeCompare(b.title));
       case "titleDesc":
         return arr.sort((a, b) => b.title.localeCompare(a.title));
-      case "endDateAsc":
-        return arr.sort(
-          (a, b) =>
-            new Date(a.endDate).getTime() - new Date(b.endDate).getTime()
-        );
-      case "endDateDesc":
-        return arr.sort(
-          (a, b) =>
-            new Date(b.endDate).getTime() - new Date(a.endDate).getTime()
-        );
+
+      case "endDateAsc": {
+        // Split into future (active/upcoming) and past (ended)
+        const future = arr
+          .filter((item) => new Date(item.endDate).getTime() > now)
+          .sort(
+            (a, b) =>
+              new Date(a.endDate).getTime() - new Date(b.endDate).getTime()
+          );
+        const past = arr
+          .filter((item) => new Date(item.endDate).getTime() <= now)
+          .sort(
+            (a, b) =>
+              new Date(b.endDate).getTime() - new Date(a.endDate).getTime()
+          );
+        return [...future, ...past];
+      }
+
+      case "endDateDesc": {
+        // First show the items that just ended most recently
+        const past = arr
+          .filter((item) => new Date(item.endDate).getTime() <= now)
+          .sort(
+            (a, b) =>
+              new Date(b.endDate).getTime() - new Date(a.endDate).getTime()
+          );
+        const future = arr
+          .filter((item) => new Date(item.endDate).getTime() > now)
+          .sort(
+            (a, b) =>
+              new Date(b.endDate).getTime() - new Date(a.endDate).getTime()
+          );
+        return [...past, ...future];
+      }
       default:
         return arr;
     }
