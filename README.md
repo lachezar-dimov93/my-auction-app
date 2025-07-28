@@ -26,6 +26,7 @@ This application is packed with features designed to provide a seamless and intu
 - **Optimized User Experience:**
 
   - **Tailwind Animations:** Subtle animations on cards (hover states, transitions) and a custom “breathe” animation for live-status badges, all implemented with Tailwind CSS.
+  - **Loading States:** Utilizes Next.js Suspense with a custom `loading.tsx` fallback and a Tailwind spinner (`animate-spin border-4 border-gray-200 border-t-primary`) to indicate data fetching.
 
 - **Dynamic Badges:** Item cards feature dynamic badges for status (e.g., "live", "ended") and category, with colors assigned programmatically for visual consistency.
 - **Data Normalization:** Client-side logic recalculates each item's status (`live` or `ended`) based on the current time and `endDate`, ensuring badges reflect accurate, up-to-date information even if server data is stale.
