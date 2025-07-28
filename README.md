@@ -28,6 +28,38 @@ This application is packed with features designed to provide a seamless and intu
   - **Tailwind Animations:** Subtle animations on cards (hover states, transitions) and a custom “breathe” animation for live-status badges, all implemented with Tailwind CSS.
 
 - **Dynamic Badges:** Item cards feature dynamic badges for status (e.g., "live", "ended") and category, with colors assigned programmatically for visual consistency.
+- **Data Normalization:** Client-side logic recalculates each item's status (`live` or `ended`) based on the current time and `endDate`, ensuring badges reflect accurate, up-to-date information even if server data is stale.
+
+---
+
+## 📸 Screenshots
+
+**Item List (Grid View) - Desktop**<br>
+![Item List Grid Desktop](/screenshots/item_list_grid_view_desktop.png)
+
+**Item List (Grid View) - Tablet**<br>
+![Item List Grid Tablet](/screenshots/item_list_grid_view_tablet.png)
+
+**Item List (Grid Viee) - Mobile**<br>
+![Item List Grid Mobile](/screenshots/item_list_grid_mobile.png)
+
+**Item List (List View) - Desktop**<br>
+![Item List List Desktop](/screenshots/item_list_list_desktop.png)
+
+**Item List (List View) - Tablet**<br>
+![Item List List Tablet](/screenshots/item_list_list_tablet.png)
+
+**Item List (List View) - Mobile**<br>
+![Item List List Mobile](/screenshots/item_list_list_mobile.png)
+
+**Item Detail - Desktop**<br>
+![Item Detail Desktop](/screenshots/item_details_desktop.png)
+
+**Item Detail - Tablet**<br>
+![Item Detail Tablet](/screenshots/item_details_tablet.png)
+
+**Item Detail - Mobile**<br>
+![Item Detail Mobile](/screenshots/item_details_mobile.png)
 
 ---
 
