@@ -1,7 +1,7 @@
 export const LABELS = {
   // General
   IMAGE_UNAVAILABLE: "Image unavailable",
-  LOADING_ITEMS: "Loading items...",
+  LOADING: "Loading...",
   PREV: "Prev",
   NEXT: "Next",
   NO_RESULTS: "No results found",
