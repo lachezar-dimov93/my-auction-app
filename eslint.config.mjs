@@ -36,7 +36,6 @@ const eslintConfig = [
           "input[type='image']": ["InputImage"],
         },
       ],
-      "jsx-a11y/no-low-text-contrast": "warn",
       "jsx-a11y/label-has-associated-control": [
         "error",
         {
