@@ -27,9 +27,7 @@ export default function RootLayout({
         </header>
 
         <main className="w-full max-w-5xl mx-auto px-4 py-4 flex-grow overflow-x-hidden">
-          <Suspense fallback={<p className="text-center py-10">Loading…</p>}>
-            {children}
-          </Suspense>
+          {children}
         </main>
 
         <footer className="text-center p-4 text-sm text-gray-500">
