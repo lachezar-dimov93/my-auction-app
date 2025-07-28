@@ -15,19 +15,19 @@ interface Props {
 }
 
 export default function ItemCard({ item, viewMode, priority = false }: Props) {
-  // flex-col on mobile, flex-row on sm+ when in list mode
+  // flex-col on mobile; flex-row on sm+ when in list mode; stretch items
   const wrapperClasses = cn(
     "group block border rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105",
     "flex",
-    viewMode === "grid" ? "flex-col" : "flex-col sm:flex-row items-start"
+    viewMode === "grid" ? "flex-col" : "flex-col sm:flex-row sm:items-stretch"
   );
 
-  // full-width image on mobile, fixed square on sm+
+  // grid: full width, fixed height; list: full width fixed height on mobile, fixed width auto height on sm+
   const imageWrapperClasses = cn(
     "relative bg-gray-200",
     viewMode === "grid"
       ? "w-full h-48"
-      : "w-full h-48 sm:w-32 sm:h-32 flex-shrink-0"
+      : "w-full h-48 sm:w-32 sm:h-auto flex-shrink-0"
   );
 
   return (
@@ -45,11 +45,11 @@ export default function ItemCard({ item, viewMode, priority = false }: Props) {
           alt={item.title}
           className="w-full h-full object-cover"
           loading={priority ? "eager" : "lazy"}
-          sizes="
+          sizes={`
             (max-width: 640px) 100vw,
             (max-width: 1024px) 50vw,
             33vw
-          "
+          `}
         />
       </div>
 
